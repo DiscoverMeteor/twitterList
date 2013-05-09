@@ -11,19 +11,24 @@
 
 <template name="content">
   <div class="row">
-    <div class="span12 well">
-      {{#if currentUser}}
-        <table class="table">
-        {{#each users}}
-          {{> user}}
-        {{/each}}
-        </table>
-      {{else}}
-      <h3>Sign in with Twitter to see who else was at the <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/">Designer Potluck</a></h3>
-        {{loginButtons}}
-      {{/if}}
-    </div>
     <div class="span12">
+
+      {{#if currentUser}}
+      {{else}}
+        <div class="well">
+        <h3>Did you come to the <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/">Designer Potluck</a>? Sign in with Twitter to add your name</h3>
+        {{loginButtons}}
+        </div>
+      {{/if}}
+
+      <table class="table">
+      {{#each users}}
+        {{> user}}
+      {{/each}}
+      </table>
+
+    </div>
+    <div class="span12 footer">
       Built by <a href="http://twitter.com/SachaGreif">@SachaGreif</a> in 20 minutes with <a href="http://discovermeteor.com" target="_blank">Meteor</a>.
     </div>
 </template>

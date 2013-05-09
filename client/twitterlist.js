@@ -1,4 +1,8 @@
-Meteor.subscribe('allUsers');
+Session.set('usersLoaded', false);
+
+Meteor.subscribe('allUsers', function(){
+	Session.set('usersLoaded', true);
+});
 
 Template.content.users = function () {
 	return Meteor.users.find();
@@ -9,5 +13,5 @@ Template.user.rendered = function(){
 		// console.log(this.data.services.twitter.screenName)
 }
 Template.user.usersReady = function(){
-	return Meteor.user() && !Meteor.loggingIn()
+	return Session.get('usersLoaded');
 }
