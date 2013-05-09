@@ -1,0 +1,39 @@
+<head>
+  <title>Who Was There?</title>
+</head>
+
+<body>
+  <div class="container">
+    {{> content}}
+  </div>
+</div>
+</body>
+
+<template name="content">
+  <div class="row">
+    <div class="span12 well">
+      {{#if currentUser}}
+        <ul>
+        {{#each users}}
+          {{> user}}
+        {{/each}}
+        </ul>
+      {{else}}
+      <h3>Sign in with Twitter to see who else was at the <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/">Designer Potluck</a></h3>
+        {{loginButtons}}
+      {{/if}}
+    </div>
+    <div class="span12">
+      Built by <a href="http://twitter.com/SachaGreif">@SachaGreif</a> in 20 minutes with <a href="http://discovermeteor.com" target="_blank">Meteor</a>.
+    </div>
+</template>
+
+<template name="user">
+ <li>
+
+  <a target="_blank" href="http://twitter.com/{{services.twitter.screenName}}"><img src="{{services.twitter.profile_image_url}}"/> {{profile.name}}</a>
+
+  <a href="https://twitter.com/{{services.twitter.screenName}}" class="twitter-follow-button" data-show-count="false">Follow @{{services.twitter.screenName}}</a>
+
+</li> 
+</template>
