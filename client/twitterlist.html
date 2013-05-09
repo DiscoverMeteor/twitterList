@@ -13,11 +13,11 @@
   <div class="row">
     <div class="span12 well">
       {{#if currentUser}}
-        <ul>
+        <table class="table">
         {{#each users}}
           {{> user}}
         {{/each}}
-        </ul>
+        </table>
       {{else}}
       <h3>Sign in with Twitter to see who else was at the <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/">Designer Potluck</a></h3>
         {{loginButtons}}
@@ -29,11 +29,17 @@
 </template>
 
 <template name="user">
- <li>
-
+ <tr>
+<td>
   <a target="_blank" href="http://twitter.com/{{services.twitter.screenName}}"><img src="{{services.twitter.profile_image_url}}"/> {{profile.name}}</a>
 
+  {{#constant}}
+  <iframe allowtransparency="true" frameborder="0" scrolling="no"
+  src="//platform.twitter.com/widgets/follow_button.html?screen_name={{services.twitter.screenName}}"
+  style="width:300px; height:20px;"></iframe>
+  {{/constant}}
   <a href="https://twitter.com/{{services.twitter.screenName}}" class="twitter-follow-button" data-show-count="false">Follow @{{services.twitter.screenName}}</a>
 
-</li> 
+</td>
+</tr> 
 </template>

@@ -5,6 +5,7 @@ Template.content.users = function () {
 };
 
 Template.user.rendered = function(){
+
 ! function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0],
         p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -15,4 +16,5 @@ Template.user.rendered = function(){
         fjs.parentNode.insertBefore(js, fjs);
     }
 }(document, 'script', 'twitter-wjs');
+
 }
