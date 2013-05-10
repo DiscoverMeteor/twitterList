@@ -11,12 +11,14 @@
 
 <template name="content">
   <div class="row">
-    <div class="span12">
+    <div class="span6">
+                <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/" class="banner"><img src="https://evbdn.eventbrite.com/s3-s3/eventlogos/10391397/potluckmeetup2.png"/></a>
 
       {{#if currentUser}}
       {{else}}
         <div class="well">
-        <h3>Did you come to the <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/">Designer Potluck</a>? Sign in with Twitter to add your name</h3>
+
+        <h4>Did you come to the <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/">Designer Potluck</a>? Sign in with Twitter to add your name</h4>
         {{loginButtons}}
         </div>
       {{/if}}
