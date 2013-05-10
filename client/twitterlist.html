@@ -14,15 +14,17 @@
     <div class="span6">
                 <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/" class="banner"><img src="https://evbdn.eventbrite.com/s3-s3/eventlogos/10391397/potluckmeetup2.png"/></a>
 
+      <div class="well">
       {{#if currentUser}}
+        <h4>Thanks! You've been added. </h4>
       {{else}}
-        <div class="well">
+        
 
         <h4>Did you come to the <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/">Designer Potluck</a>? Sign in with Twitter to add your name</h4>
         {{loginButtons}}
-        </div>
+        
       {{/if}}
-
+      </div>
       <table class="table">
       {{#each users}}
         {{> user}}
