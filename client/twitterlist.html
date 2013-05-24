@@ -12,7 +12,6 @@
 <template name="content">
   <div class="row">
     <div class="span6">
-                <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/" class="banner"><img src="https://evbdn.eventbrite.com/s3-s3/eventlogos/10391397/potluckmeetup2.png"/></a>
 
       <div class="well">
       {{#if currentUser}}
@@ -20,7 +19,7 @@
       {{else}}
         
 
-        <h4>Did you come to the <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/">Designer Potluck</a>? Sign in with Twitter to add your name</h4>
+        <h4>Sign in with Twitter to add your name to this list!</h4>
         {{loginButtons}}
         
       {{/if}}
@@ -33,7 +32,7 @@
 
     </div>
     <div class="span12 footer">
-      Built by <a href="http://twitter.com/SachaGreif">@SachaGreif</a> in 20 minutes with <a href="http://discovermeteor.com" target="_blank">Meteor</a>.
+      Built by <a href="http://twitter.com/SachaGreif">@SachaGreif</a> in 1 hour with <a href="http://discovermeteor.com" target="_blank">Meteor</a>.
     </div>
 </template>
 
@@ -42,7 +41,7 @@
 <td>
   <a target="_blank" href="http://twitter.com/{{services.twitter.screenName}}"><img src="{{services.twitter.profile_image_url}}"/> {{profile.name}}</a>
 
-  {{#if usersReady}}
+  {{#if services.twitter.screenName}}
     {{#constant}}
     <iframe allowtransparency="true" frameborder="0" scrolling="no"
     src="//platform.twitter.com/widgets/follow_button.html?screen_name={{services.twitter.screenName}}"

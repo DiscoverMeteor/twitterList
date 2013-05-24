@@ -1,0 +1,25 @@
+<template name="dssfd">
+<head>
+  <title>Who Was There?</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+    <div class="span6">
+      <div class="well">
+        <h4>Did you come to the <a href="http://www.meetup.com/Meteor-SFBay/events/115875132/">Designer Potluck</a>? Sign in with Twitter to add your name</h4>
+        {{loginButtons}}
+      </div>
+      <table class="table">
+         <tr>
+<td>
+  <a target="_blank" href="http://twitter.com/{{userName}}"><img src="{{image}}"/> {{fullName}}</a>
+
+</td>
+</tr> 
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</template>
